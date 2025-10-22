@@ -7,7 +7,7 @@ mongoose.connection.on("connected", () => {
 })
 
 mongoose.connection.on("error", (error) => {
-    console.error(`Error connecting to Mongodb database due to ${error}`)
+    console.error(`Error connecting to Mongodb database due to ${error.message}`)
 })
 
 

@@ -13,7 +13,6 @@ const userSchema = new mongoose.Schema({
     }
 });
 
-
-//Note: There might be an errpr here 
+//Note: There might be an error here 
 // based on the model spelling
 module.exports = mongoose.model("User", userSchema);
