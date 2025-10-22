@@ -1,8 +1,10 @@
- const express = require("express")
+const express = require("express")
 const dotenv = require('dotenv')
 const cors = require('cors')
 const signupRoute = require("./routes/signup");
 const bodyParser = require("body-parser");
+const createAdminAccount = require("./scripts/admin")
+const loginRoute = require("./routes/login")
 
 dotenv.config()
 
@@ -16,9 +18,12 @@ app.use(express.urlencoded({
     extended: true
 }));
 
+createAdminAccount();
+
 app.use(bodyParser.json())
 
-app.use("/user", signupRoute)
+app.use("/user", signupRoute);
+app.use("/auth", loginRoute);
 
 app.get('/', async(req, res) => {
     try {
