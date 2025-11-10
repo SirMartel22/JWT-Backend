@@ -1,5 +1,5 @@
-const express = require("express")
 const dotenv = require('dotenv')
+const express = require("express")
 const cors = require('cors')
 const signupRoute = require("./routes/signup");
 const bodyParser = require("body-parser");
@@ -20,6 +20,7 @@ app.use(express.json())
 app.use(express.urlencoded({
     extended: true
 }));
+ 
 
 createAdminAccount();
 
